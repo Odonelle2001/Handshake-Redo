@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Handshake Mock – Feed</title>
+  <link rel="stylesheet" href="Css/styles.css">
+   <script src="main.js"></script>
+</head>
+<body>
+
+<header class="navbar">
+  <img src="Screenshot (520).png" alt="Handshake Logo" class="logo">
+
+  <nav class="nav-links">
+   <a href="Homepage.html" class="active">Home</a>
+      <a href="FeedPage.html" class="active">Feed</a>
+      <a href="feed.html">Explore</a>
+      <a href="feed.html">Inbox</a>
+      <a href="feed.html">Jobs</a>
+      <a href="feed.html">Events</a>
+      <a href="feed.html">People</a>
+     <a href="CareerCenter.html" class="active">Career Center</a>
+  </nav>
+  </nav>
+
+  <div class="nav-right">
+    <button class="outline-btn" onclick="location.href='index.html'">Log out</button>
+    <div class="nav-avatar"></div>
+  </div>
+</header>
+
+<main class="page-shell feed-layout">
+  <div class="feed-tabs">
+    <button class="active">Feed</button>
+    <button>For You</button>
+    <button>Saved</button>
+  </div>
+
+  <div class="feed-main-grid">
+    <!-- left – posts area -->
+    <section class="feed-left">
+      <div class="share-row">
+        <div class="share-avatar"></div>
+        <input class="share-input"
+               type="text"
+               placeholder="Share something with your community..." />
+      </div>
+
+      <div class="fake-post">
+        <p style="font-size:0.8rem; color:#666;">Promoted · Amazon</p>
+        <h3 style="margin:6px 0;">AI Careers: AWS</h3>
+        <p style="font-size:0.9rem;">
+          Build AI That Matters: Make an impact at AWS by building solutions powered by AI...
+        </p>
+      </div>
+    </section>
+
+    <!-- right – announcements -->
+    <aside class="feed-right">
+      <h2>Announcements</h2>
+
+      <div class="announcement">
+        Come meet Employers at the IT Career Fair on December 5!
+        <button class="green-btn" style="margin-top:8px;"
+                onclick="location.href='career-center.html'">
+          Add Event to your calendar
+        </button>
+      </div>
+
+      <div class="announcement">
+        Another announcement can go here…
+        <button class="green-btn" style="margin-top:8px;"
+                onclick="location.href='career-center.html'">
+          Add Event to your calendar
+        </button>
+      </div>
+
+      <h2 style="margin-top:20px;">Events saved on your calendar</h2>
+      <div class="announcement">
+        ✅ IT Career Fair – December 5
+      </div>
+    </aside>
+  </div>
+</main>
+
+</body>
+</html>

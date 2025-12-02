@@ -1,0 +1,476 @@
+/* ------------- RESET / BASE ------------------ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Arial, sans-serif;
+  background: #d3f1ac;
+  color: #111827;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ------------- COLORS ------------------------ */
+:root {
+  --green-nav:   #c7eb6a;
+  --green-dark:  #4c7e26;
+  --green-mid:   #7fc149;
+  --green-light: #b7e47a;
+}
+
+/* ------------- NAVBAR ------------------------ */
+.navbar {
+  background: var(--green-nav);
+  height: 64px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* left side (logo + links) */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 800px;
+}
+
+/* logo pill */
+.logo {
+  width: 46px;
+  height: 32px;
+  border-radius: 8px;
+  background: #e6ff4f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: #03221a;
+}
+
+/* nav links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.nav-links a {
+  padding-bottom: 2px;
+}
+
+.nav-links a.active {
+  border-bottom: 2px solid #000;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* right side */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-outlined {
+  padding: 6px 18px;
+  border-radius: 6px;
+  border: 1px solid #111827;
+  background: #ffffff;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+/* navbar avatar same as page avatar */
+.nav-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.nav-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ------------- HERO BANNER ------------------- */
+.hero-banner {
+  width: 100%;
+  height: 230px;
+  margin-top: 10px;
+  /* no horizontal centering, just full width */
+}
+
+.hero-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* fill the whole strip */
+  border-radius: 0;    /* touch the corners; add 6px if you want rounded */
+}
+
+
+/* ------------- PAGE WRAPPER ------------------ */
+.home-shell {
+  max-width: 1200px;
+  margin: 32px 40px 48px;   /* top:32, right:40, bottom:48, left:40 */
+  padding: 0;               /* remove extra side padding */
+}
+
+/* welcome + search */
+.page-title {
+  font-size: 5rem;
+  font-weight: 900;
+  margin-bottom: 30px;
+}
+
+.welcome-row {
+  margin-bottom: 24px;
+}
+
+.search-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;          /* adjust width so it doesn’t stretch full */
+  margin: -9 auto; 
+  background: white;
+  border-radius: 999px;
+  border: 5px solid var(--green-mid);
+  padding: 15px 45px;
+  box-shadow: 0 0 0 1px #e5f5d3;
+}
+
+.search-icon {
+  font-size: 1.2rem;
+}
+
+.search-row input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1.4rem;
+  background: transparent;
+}
+
+/* ------------- MAIN GRID --------------------- */
+.home-main {
+  display: grid;
+  grid-template-columns: minmax(0, 100fr) minmax(0, 90fr); /* two columns */
+  gap: 1000px;
+  width: 100%;
+  margin-top: 40px;
+  align-items: flex-start; /* keep tops aligned */
+}
+
+
+/* -------- LEFT: PROFILE CARD (WHITE) -------- */
+.profile-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 10px;
+  width: 900%;
+    max-width: 1000px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.08);
+  .profile-card {
+  margin-left: -200px; /* adjust number until it looks right */
+}
+
+
+  /* NEW */
+  display: flex;
+  flex-direction: column;
+  text-align: left;        /* make sure contents are left-aligned */
+}
+
+/* avatar + name row */
+.profile-header {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #40f47f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.profile-name-block h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.profile-major {
+  font-weight: 900;
+   font-size: 2rem;
+    color: #07ef96;
+}
+
+.profile-school {
+  font-size: 1.5rem;
+  color: #033f28;
+}
+
+/* stats list */
+.profile-stats {
+  list-style: none;
+  margin: 14px 0 16px;
+}
+
+.profile-stats li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 3.5rem;
+  margin-bottom: 4px;
+}
+
+/* edit button */
+.btn-edit {
+  background: var(--green-dark);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 16px;
+  font-size:1.5rem;
+  cursor: pointer;
+  margin: 12px 0 45px;
+}
+
+/* row(s) of green buttons */
+.action-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px 12px;
+   align-self: flex-start;
+}
+
+.action-buttons button {
+  border-radius: 30px;
+  padding: 10px 12px;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* reuse existing color classes */
+.action-buttons a.btn-green  { background: var(--green-mid);  color: #fff; }
+.action-buttons a.btn-light  { background: var(--green-light); color: #12310b; }
+.action-buttons a.btn-dark   { background: var(--green-dark);  color: #fff; }
+
+
+
+/* three shades of green */
+.btn-green {
+  background: var(--green-mid);
+  color: #fff;
+}
+
+.btn-light {
+  background: var(--green-light);
+  color: #12310b;
+}
+
+.btn-dark {
+  background: var(--green-dark);
+  color: #fff;
+}
+
+/* chat bubble */
+.chat-bubble {
+  margin-top: 50px;
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 8px;
+  background: #e5f5d3;
+  border: 2px solid var(--green-mid);
+  font-size: 2.5rem;
+  position: relative;
+  align-self: flex-start; 
+  cursor: pointer;
+}
+
+.chat-bubble span {
+  text-decoration: none;
+  color: inherit;
+}
+
+.chat-bubble::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  bottom: -8px;
+  width: 14px;
+  height: 14px;
+  background: #e5f5d3;
+  border-left: 1px solid var(--green-mid);
+  border-bottom: 1px solid var(--green-mid);
+  transform: rotate(45deg);
+}
+
+/* -------- RIGHT: SIDEBAR (GREEN) ------------ */
+.sidebar {
+  background: #a8d67f;
+  border-radius: 12px;
+  padding: 20px;
+   width: 900%; 
+  box-shadow: 0 0 12px rgba(0,0,0,0.12);
+  font-size: 2rem;
+}
+
+.sidebar h3 {
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 14px;
+  font-size: 2,5rem;
+  font-weight: 700;
+}
+
+.sidebar-subtitle {
+  margin-top: 20px;
+}
+
+/* boxes inside sidebar */
+.sidebar-box {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-bottom: 12px;
+  border-left: 10px solid var(--green-dark);
+}
+
+.sidebar-box small {
+  display: block;
+  margin-top: 4px;
+  color: #6b7280;
+}
+
+/* ------------- RESPONSIVE -------------------- */
+@media (max-width: 900px) {
+  .home-shell {
+    padding: 0 16px 32px;
+  }
+
+  .home-main {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    order: -1;  /* events above profile on small screens */
+  }
+
+  .search-row {
+    max-width: 100%;
+  }
+}
+
+
+/* ---------- CHAT PAGE LAYOUT ---------- */
+
+.chat-shell {
+  max-width: 1200px;
+  margin: 300px auto;
+  padding: 0 24px;
+}
+
+.chat-panel {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.12);
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* header bar inside chat */
+.chat-header {
+  padding: 16px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+/* scrollable messages area */
+.chat-messages {
+  flex: 1;
+  padding: 24px;
+  background: #f4fbf2;
+  overflow-y: auto;
+}
+
+/* individual messages */
+.msg {
+  max-width: 70%;
+  padding: 10px 14px;
+  border-radius: 18px;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* “them” (Career Center) bubbles */
+.msg-them {
+  background: #e0f2d8;
+  align-self: flex-start;
+}
+
+/* “me” (Lucas) bubbles */
+.msg-me {
+  background: var(--green-mid);
+  color: #ffffff;
+  align-self: flex-end;
+}
+
+/* bottom input row */
+.chat-input-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-top: 1px solid #e5e7eb;
+  gap: 12px;
+}
+
+.chat-input-row input {
+  flex: 1;
+  border-radius: 999px;
+  border: 1px solid #cbd5e1;
+  padding: 10px 14px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.chat-input-row button {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 20px;
+  background: var(--green-dark);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
