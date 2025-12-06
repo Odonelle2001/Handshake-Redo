@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Handshake Events Feed</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="hs-header">
+  <div class="hs-header-left">
+    <div class="hs-logo">Handshake</div>
+    <nav class="hs-nav">
+      <a href="#" class="active">Events</a>
+      <a href="#">Jobs</a>
+      <a href="#">Employers</a>
+      <a href="#">Messages</a>
+    </nav>
+  </div>
+  <div class="hs-header-right">
+    <span class="hs-user-pill">Student</span>
+  </div>
+</header>
+
+<main class="hs-main">
+  <!-- Hero / banner -->
+  <section class="hs-hero">
+    <h1>Events for your future</h1>
+    <p>Explore fairs, workshops, and info sessions recommended for you.</p>
+  </section>
+
+  <!-- Top controls -->
+  <section class="hs-controls">
+    <input id="searchInput" class="hs-input" type="text"
+           placeholder="Search events, employers, or keywords…">
+
+    <select id="typeFilter" class="hs-select">
+      <option value="">All types</option>
+      <option value="career-fair">Career fair</option>
+      <option value="workshop">Workshop</option>
+      <option value="info-session">Info session</option>
+      <option value="networking">Networking</option>
+    </select>
+
+    <select id="modeFilter" class="hs-select">
+      <option value="">All formats</option>
+      <option value="in-person">In person</option>
+      <option value="virtual">Virtual</option>
+      <option value="hybrid">Hybrid</option>
+    </select>
+
+    <select id="sortOrder" class="hs-select">
+      <option value="soonest">Sort: Soonest first</option>
+      <option value="latest">Sort: Latest first</option>
+      <option value="az">Sort: A → Z</option>
+    </select>
+  </section>
+
+  <section class="hs-layout">
+    <!-- Sidebar filters -->
+    <aside class="hs-sidebar">
+      <h2>Filters</h2>
+
+      <label class="hs-check-row">
+        <input id="recommendedOnly" type="checkbox">
+        <span>Only recommended</span>
+      </label>
+
+      <label class="hs-check-row">
+        <input id="upcomingOnly" type="checkbox" checked>
+        <span>Upcoming only</span>
+      </label>
+
+      <h3>Duration</h3>
+      <label class="hs-radio-row">
+        <input type="radio" name="duration" value="" checked>
+        <span>Any length</span>
+      </label>
+      <label class="hs-radio-row">
+        <input type="radio" name="duration" value="short">
+        <span>Up to 1 hour</span>
+      </label>
+      <label class="hs-radio-row">
+        <input type="radio" name="duration" value="long">
+        <span>More than 1 hour</span>
+      </label>
+    </aside>
+
+    <!-- Feed -->
+    <section class="hs-feed">
+      <header class="hs-feed-header">
+        <h2>Events feed</h2>
+        <p id="resultsSummary" class="hs-muted"></p>
+      </header>
+
+      <div id="eventsContainer" class="hs-cards">
+        <!-- JS will render cards here -->
+      </div>
+    </section>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
