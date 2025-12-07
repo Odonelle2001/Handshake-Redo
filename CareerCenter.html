@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Handshake Mock – Career Center</title>
+  <title>Handshake – Career Center</title>
   <link rel="stylesheet" href="Css/styles.css">
-   <script src="main.js"></script>
+  <link rel="stylesheet" href="Css/stylesCareerPage.css">
+  <link rel="stylesheet" href="./Css/stylesFooter.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="main.js"></script>
 </head>
 <body>
 
@@ -39,12 +42,72 @@
     </div>
 
     <div class="career-tabs">
-      <button class="green-btn" onclick="location.href='career-center.html'">Schedule Appointment</button>
+      <!--Button Trigger Modal-->
+      <button type="button" class="btn btn-primary"  id="highB" data-bs-toggle="modal" data-bs-target="#schedule">
+        Schedule an Appointment
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="schedule" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Schedule an Appointment</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <select class="form-select form-select-lg mb-3" aria-label="Large select example">
+                <option selected>Choose a Category</option>
+                <option value="1">Current Student</option>
+                <option value="2">Alumni</option>
+                <option value="3">Prospective Student</option>
+              </select>
+              <select class="form-select form-select-lg mb-3" aria-label="Large select example">
+                <option selected>Choose an Appointment Type</option>
+                <option value="1">Explore Career Options</option>
+                <option value="2">Resume and Cover Letter Review</option>
+                <option value="3">Job and Internship Search</option>
+                <option value="4">Interview Prep and Practice</option>
+                <option value="5">Internship Info Session</option>
+                <option value="6">Resume Review</option>
+              </select>
+              <select class="form-select form-select-lg mb-3" aria-label="Large select example">
+                <option selected>Select a date:</option>
+                <option value="1">Monday - Dec 8, 2025 </option>
+                <option value="2">Tuesday -  Dec 9, 2025</option>
+                <option value="3">Wednesday - Dec 10, 2025</option>
+                <option value="4">Thursday - Dec 11, 2025</option>
+                <option value="5">Friday - Dec 12, 2025</option>
+                <option value="6">Monday - Dec 16 2025</option>
+              </select>
+              <select class="form-select form-select-lg mb-3" aria-label="Large select example">
+                <option selected>Appointment Medium: </option>
+                <option value="1">Phone</option>
+                <option value="2">In Person</option>
+                <option value="3">Zoom Meeting</option>
+               
+              </select>
+              <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">What can we help you with?</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary">Schedule Appointment </button>
+            </div>
+          </div>
+        </div>
+      </div>
       <button class="outline-btn">About Us</button>
       <button class="outline-btn">Contact Us</button>
       <button class="outline-btn">Resources</button>
     </div>
   </section>
+
+
+  
+
 
   <!-- main 2-column content -->
   <div class="career-main-grid">
@@ -97,7 +160,72 @@
       </div>
     </section>
   </div>
+  <!--Upcoming Events-->
+
+<h3 class="p3">Upcoming Events</h3>
+<div class="row">
+  <div class="col-sm-6 mb-3 mb-sm-0">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Academic Internship Info Session</h5>
+        <p class="card-text">An academic internship is one of Metro State University's creative learning strategies available to students. It is a structured, credit-bearing field experience in which a student acquires and applies knowledge and skills, while working in a responsible role within a community, business, or government setting.</p>
+        <a href="#" id="lowB" class="btn btn-primary">Read More</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Job Fair</h5>
+        <p class="card-text">Students had the chance to meet representatives from various sectors, including [industries]. Many employers offered on-the-spot interviews, resume reviews, and information about internship and full-time roles.</p>
+        <a href="#" id="lowB" class="btn btn-primary">Read More</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Footer-->
+<footer class="footer" id="colorF">
+  <div class="footer-container">
+
+    <div class="footer-section" id="heading">
+     
+      <img src="/Images/Handshake_Wordmark_Nori_RGB.svg" class="img-thumbnail" >
+    </div>
+
+    <div class="footer-section" id="heading">
+     <h3 >About Us</h3>
+    </div>
+
+    <div class="footer-section" id="heading">
+      <h3>Contact</h3>
+      <p>Email: info@example.com</p>
+      <p>Phone: +1 234 567 890</p>
+    </div>
+
+    <div class="footer-section" id="heading">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#">🔵</a>
+        <a href="#">🟣</a>
+        <a href="#">🔴</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom" id="heading">
+    © 2025 Your Company — All Rights Reserved.
+  </div>
+</footer>
+
+
+
 </main>
 
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+
 </html>
