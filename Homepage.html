@@ -4,12 +4,11 @@
   <meta charset="UTF-8">
   <title>Handshake Mock – Home</title>
   <link rel="stylesheet" href="Css/HomePage.css">
-  <script src="main.js"></script>
-</body>
-</html>
-
+   <link rel="stylesheet" href="./Css/stylesFooter.css">
+  <script src="main.js" defer></script>
 </head>
 <body>
+
 
   <!-- NAVBAR -->
   <header class="navbar">
@@ -78,57 +77,92 @@
           <li>✉️ <span>56 messages sent</span></li>
         </ul>
 
-        <button class="btn-edit">Edit Profile</button>
+         <a href="ProfilePage.html" class="btn-edit" data-loading-button>Edit Profile</a>
 
-      <div class="action-buttons">
-  <a href="#" class="btn-green action-link" data-loading-button>Schedule Appointment</a>
-  <a href="#" class="btn-light action-link" data-loading-button>About Us</a>
-  <a href="#" class="btn-green action-link" data-loading-button>Upload / Edit Resume</a>
-  <a href="#" class="btn-dark action-link" data-loading-button>Contact us</a>
-  <a href="#" class="btn-light action-link" data-loading-button>Resources</a>
-  <a href="#" class="btn-green action-link" data-loading-button>Skills</a>
+
+     <div class="action-buttons">
+  <a href="ScheduleAppointment.html" class="btn-green action-link" data-loading-button>Schedule Appointment</a>
+  <a href="AboutUs.html" class="btn-light action-link" data-loading-button>About Us</a>
+  <a href="UploadResume.html" class="btn-green action-link" data-loading-button>Upload / Edit Resume</a>
+  <a href="ContactUs.html" class="btn-dark action-link" data-loading-button>Contact us</a>
+  <a href="Resources.html" class="btn-light action-link" data-loading-button>Resources</a>
+  <a href="Skills.html" class="btn-green action-link" data-loading-button>Skills</a>
 </div>
-        <div class="chat-bubble">
-            <a href="ChatPage.html" class="chat-bubble">
-          <span>Chat</span>
-          </a>
+
+       <a href="ChatPage.html" class="chat-bubble">
+  <span>Chat</span>
+</a>
+
         </div>
       </article>
 
       <!-- RIGHT: EVENTS / RECOMMENDED (green) -->
       <aside class="sidebar">
-        <h3>Upcoming Events &amp; Deadline</h3>
+  <h3>Upcoming Events &amp; Deadline</h3>
 
-        <div class="sidebar-box">
-          <strong>IT Career Fair – Dec 5</strong><br>
-          <small>✅ RSVP</small>
+  <div class="sidebar-box" data-event-title="IT Career Fair – Dec 5">
+    <strong>IT Career Fair – Dec 5</strong><br>
+    <button type="button" class="event-btn" data-action="rsvp">RSVP</button>
+  </div>
+
+  <div class="sidebar-box" data-event-title="Resume Workshop – Nov 12">
+    <strong>Resume Workshop – Nov 12</strong><br>
+    <button type="button" class="event-btn" data-action="calendar">Add to Calendar</button>
+  </div>
+
+  <div class="sidebar-box" data-event-title="Mock Interview Day">
+    <strong>Mock Interview Day</strong><br>
+    <button type="button" class="event-btn" data-action="rsvp">Reserve Slot</button>
+  </div>
+
+  <h3 class="sidebar-subtitle">Recommended for IT Major</h3>
+
+  <div class="sidebar-box">
+    <strong>IT Support Intern – Target</strong><br>
+    <small>Filters: Remote, Entry-level</small>
+  </div>
+
+  <div class="sidebar-box">
+    <strong>Systems Analyst – Medtronic</strong><br>
+    <small>Filters: Remote, Level 2</small>
+  </div>
+
+  <!-- NEW: simple demo calendar list -->
+  <h3 class="sidebar-subtitle">My Calendar</h3>
+  <ul id="calendarList" class="calendar-list">
+    <li class="empty-msg"> No events added yet.</li>
+  </ul>
+</aside>
+</section>>
+</main>
+
+<!-- Footer -->
+    <footer class="app-footer">
+        <div class="footer-inner">
+
+            <!-- Logo left -->
+            <div class="footer-brand">
+                <img src="/Images/Handshake_Wordmark_Nori_RGB.svg" alt="Handshake Logo">
+            </div>
+
+            <!-- Links center -->
+            <div class="footer-links">
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+
+            <!-- Copyright right -->
+            <p class="footer-copy">
+                © 2025 Handshake Mock — All Rights Reserved.
+            </p>
+
         </div>
+    </footer>
 
-        <div class="sidebar-box">
-          <strong>Resume Workshop – Nov 12</strong><br>
-          <small>📅 Add to Calendar</small>
-        </div>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
 
-        <div class="sidebar-box">
-          <strong>Mock Interview Day</strong><br>
-          <small>Slots Available</small>
-        </div>
-
-        <h3 class="sidebar-subtitle">Recommended for IT Major</h3>
-
-        <div class="sidebar-box">
-          <strong>IT Support Intern – Target</strong><br>
-          <small>Filters: Remote, Entry-level</small>
-        </div>
-
-        <div class="sidebar-box">
-          <strong>Systems Analyst – Medtronic</strong><br>
-          <small>Filters: Remote, Level 2</small>
-        </div>
-      </aside>
-    </section>
-
-  </main>
 </body>
 </html>
-

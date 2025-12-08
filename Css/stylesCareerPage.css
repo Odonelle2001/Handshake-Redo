@@ -9,3 +9,13 @@
     background: #8fd06e;
     border: none; 
 }
+/* ==== Career Center Banner Image ==== */
+.banner-image {
+    background-image: url("Images/Careercenter.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 160px;   /* adjust height if needed */
+    border-radius: 0 0 12px 12px;
+}

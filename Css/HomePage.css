@@ -5,11 +5,15 @@
   padding: 0;
 }
 
-html, body {
+/* Make page fill the screen and allow sticky footer */
+html,
+body {
   height: 100%;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
                Roboto, Arial, sans-serif;
   background: #d3f1ac;
@@ -20,6 +24,12 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+/* Let main fill available space so footer sits at bottom */
+main {
+  flex: 1;
+}
+
 
 /* ------------- COLORS ------------------------ */
 :root {
@@ -473,4 +483,57 @@ a {
   color: #fff;
   font-weight: 600;
   cursor: pointer;
+}
+/* ---------- FOOTER BAR ---------- */
+
+/* full-width bar, sits at bottom because body is flex + main {flex:1} */
+.app-footer {
+  background: #8fd06e;        /* same green family as navbar */
+  color: #143b16;
+  padding: 6px 0;             /* small bar height */
+  margin-top: auto;           /* push footer to bottom */
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
+
+/* center content and spread items left / center / right */
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* small logo on the left */
+.footer-brand img {
+  height: 20px;              /* adjust up/down if you want bigger or smaller */
+  width: auto;
+  display: block;
+}
+
+/* middle links */
+.footer-links a {
+  margin: 0 8px;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* right side text */
+.footer-copy {
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+/* stack items nicely on very small screens */
+@media (max-width: 600px) {
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
 }

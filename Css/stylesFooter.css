@@ -1,70 +1,69 @@
-.footer {
-  background: #222;
-  color: #fff;
-  padding: 40px 20px 20px;
-  font-family: Arial, sans-serif;
+/* Make page stretch full height */
+html, body {
+    height: 100%;
 }
 
-.footer-container {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  max-width: 1200px;
-  margin: auto;
+body {
+    display: flex;
+    flex-direction: column;
 }
 
-#colorF{
-  background-color:#8fd06e;
+/* Footer container */
+.app-footer {
+    background: #8fd06e; /* Handshake green */
+    color: #143b16;
+    padding: 12px 0;
+    width: 100%;
+    margin-top: auto; /* Stick footer at bottom */
+    font-family: Arial, sans-serif;
+    border-top: 3px solid #6fb24e; /* subtle accent */
 }
 
-#heading{
-  color:black;
+/* Inner layout */
+.footer-inner {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
 }
 
-.footer-section h3 {
-  margin-bottom: 10px;
-  font-size: 18px;
+/* === Logo === */
+.footer-brand img {
+    width: 80px;      /* keep logo small */
+    height: auto;
+    opacity: 0.9;
 }
 
-.footer-section p,
-.footer-section ul {
-  font-size: 14px;
-  margin: 0;
+/* === Links === */
+.footer-links a {
+    margin-right: 14px;
+    text-decoration: none;
+    font-size: 13px;
+    color: #143b16;
 }
 
-.footer-section ul {
-  list-style: none;
-  padding: 0;
+.footer-links a:hover {
+    text-decoration: underline;
 }
 
-.footer-section ul li {
-  margin: 6px 0;
+/* === Copyright text === */
+.footer-copy {
+    font-size: 11px;
+    opacity: 0.65;
+    margin: 0;
 }
 
-.footer-section ul li a {
-  color: #ddd;
-  text-decoration: none;
-}
+/* === Responsive layout === */
+@media (max-width: 700px) {
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 6px;
+    }
 
-.footer-section ul li a:hover {
-  color: #fff;
+    .footer-brand img {
+        margin-bottom: 4px;
+    }
 }
-
-.social-icons a {
-  margin-right: 10px;
-  font-size: 20px;
-  text-decoration: none;
-  color: #ddd;
-}
-
-.social-icons a:hover {
-  color: #fff;
-}
-
-.footer-bottom {
-  text-align: center;
-  font-size: 14px;
-  margin-top: 30px;
-  opacity: 0.7;
-}
-

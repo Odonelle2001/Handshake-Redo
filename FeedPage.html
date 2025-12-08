@@ -4,23 +4,25 @@
   <meta charset="UTF-8">
   <title>Handshake Mock – Feed</title>
   <link rel="stylesheet" href="Css/styles.css">
-   <script src="main.js"></script>
+   <link rel="stylesheet" href="./Css/stylesFooter.css">
+  <script src="main.js" defer></script>
 </head>
 <body>
 
 <header class="navbar">
+  <!-- Logo -->
   <img src="Screenshot (520).png" alt="Handshake Logo" class="logo">
 
+  <!-- Main nav -->
   <nav class="nav-links">
-   <a href="Homepage.html" class="active">Home</a>
-      <a href="FeedPage.html" class="active">Feed</a>
-      <a href="feed.html">Explore</a>
-      <a href="feed.html">Inbox</a>
-      <a href="feed.html">Jobs</a>
-      <a href="feed.html">Events</a>
-      <a href="feed.html">People</a>
-     <a href="CareerCenter.html" class="active">Career Center</a>
-  </nav>
+    <a href="Homepage.html">Home</a>
+    <a href="FeedPage.html" class="active">Feed</a>
+    <a href="FeedPage.html">Explore</a>
+    <a href="FeedPage.html">Inbox</a>
+    <a href="FeedPage.html">Jobs</a>
+    <a href="FeedPage.html">Events</a>
+    <a href="FeedPage.html">People</a>
+    <a href="CareerCenter.html">Career Center</a>
   </nav>
 
   <div class="nav-right">
@@ -30,6 +32,7 @@
 </header>
 
 <main class="page-shell feed-layout">
+  <!-- tabs row -->
   <div class="feed-tabs">
     <button class="active">Feed</button>
     <button>For You</button>
@@ -37,51 +40,161 @@
   </div>
 
   <div class="feed-main-grid">
-    <!-- left – posts area -->
+    <!-- LEFT: share + posts -->
     <section class="feed-left">
-      <div class="share-row">
-        <div class="share-avatar"></div>
-        <input class="share-input"
-               type="text"
-               placeholder="Share something with your community..." />
-      </div>
+      <!-- share something box with image upload -->
+      <form class="post-form" onsubmit="return false;">
+        <div class="share-row">
+          <div class="share-avatar"></div>
+          <input
+            class="share-input"
+            type="text"
+            id="postText"
+            placeholder="Share something with your community..."
+          />
+        </div>
+      
 
-      <div class="fake-post">
-        <p style="font-size:0.8rem; color:#666;">Promoted · Amazon</p>
-        <h3 style="margin:6px 0;">AI Careers: AWS</h3>
-        <p style="font-size:0.9rem;">
-          Build AI That Matters: Make an impact at AWS by building solutions powered by AI...
+        <div class="post-form-bottom">
+          <label class="upload-label">
+            📷 Add a photo
+            <input type="file" id="postImage" accept="image/*">
+          </label>
+          <button type="button" class="green-btn" id="postButton">
+            Post
+          </button>
+          
+        </div>
+      </form>
+        <div class="feed-photo-container">
+    <img src="Post.jpeg" alt="Feed visual" class="feed-photo">
+</div>
+
+      <!-- demo post that will show the image/text -->
+      <article class="fake-post" id="demoPost">
+        <p class="post-meta">Promoted · Amazon</p>
+        <h3 class="post-title">AI Careers: AWS</h3>
+        <p class="post-text">
+          Build AI that matters. Make an impact at AWS by building solutions powered by AI...
         </p>
-      </div>
+        <img
+          src="Images/aws-post.png"
+          alt="AI Careers at AWS"
+          class="post-image"
+          id="postImagePreview"
+          style="display:none;"
+        >
+      </article>
     </section>
 
-    <!-- right – announcements -->
+    <!-- RIGHT: announcements -->
     <aside class="feed-right">
       <h2>Announcements</h2>
 
       <div class="announcement">
         Come meet Employers at the IT Career Fair on December 5!
         <button class="green-btn" style="margin-top:8px;"
-                onclick="location.href='career-center.html'">
+                onclick="addToCalendar('IT Career Fair – December 5')">
           Add Event to your calendar
         </button>
       </div>
 
       <div class="announcement">
-        Another announcement can go here…
+        Another announcement can go here...
         <button class="green-btn" style="margin-top:8px;"
-                onclick="location.href='career-center.html'">
+                onclick="addToCalendar('Another event')">
           Add Event to your calendar
         </button>
       </div>
 
       <h2 style="margin-top:20px;">Events saved on your calendar</h2>
-      <div class="announcement">
-        ✅ IT Career Fair – December 5
+      <div class="announcement" id="calendarList">
+        <span class="empty-msg">No events saved yet.</span>
       </div>
     </aside>
   </div>
 </main>
+
+<!-- small inline script just for feed page behaviour -->
+<script>
+  // handle post with image (simple demo)
+  const fileInput = document.getElementById('postImage');
+  const postButton = document.getElementById('postButton');
+  const postText = document.getElementById('postText');
+  const imagePreview = document.getElementById('postImagePreview');
+  const demoPost = document.getElementById('demoPost');
+
+  let selectedImageData = null;
+
+  if (fileInput) {
+    fileInput.addEventListener('change', () => {
+      const file = fileInput.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = e => {
+        selectedImageData = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  if (postButton) {
+    postButton.addEventListener('click', () => {
+      const text = postText.value.trim();
+      if (text) {
+        demoPost.querySelector('.post-text').textContent = text;
+      }
+      if (selectedImageData) {
+        imagePreview.src = selectedImageData;
+        imagePreview.style.display = 'block';
+      }
+      // clear inputs for demo
+      postText.value = '';
+      fileInput.value = '';
+      selectedImageData = null;
+    });
+  }
+
+  // simple "add to calendar" demo on the right
+  function addToCalendar(eventName) {
+    const list = document.getElementById('calendarList');
+    const empty = list.querySelector('.empty-msg');
+    if (empty) empty.remove();
+
+    const p = document.createElement('p');
+    p.textContent = '✅ ' + eventName;
+    list.appendChild(p);
+  }
+</script>
+
+ <!-- Footer -->
+    <footer class="app-footer">
+        <div class="footer-inner">
+
+            <!-- Logo left -->
+            <div class="footer-brand">
+                <img src="/Images/Handshake_Wordmark_Nori_RGB.svg" alt="Handshake Logo">
+            </div>
+
+            <!-- Links center -->
+            <div class="footer-links">
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+
+            <!-- Copyright right -->
+            <p class="footer-copy">
+                © 2025 Handshake Mock — All Rights Reserved.
+            </p>
+
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
 
 </body>
 </html>

@@ -67,7 +67,7 @@ body {
 /* ===== Reusable pieces ===== */
 
 .page-shell {
-  padding: 20px 40px 40px;
+  padding: 40px 70px;
 }
 
 .green-btn,
@@ -271,12 +271,14 @@ body {
 
 .feed-main-grid {
   display: grid;
-  grid-template-columns: 2fr 1.1fr;
-  gap: 18px;
+  grid-template-columns: 1.6fr 1fr; /* makes layout wider */
+  gap: 20px;
+  width: 100%;
 }
 
+
 .feed-left {
-  background: #ffffff;
+  background: #def8d0;
   border-radius: 12px;
   padding: 18px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.06);
@@ -300,28 +302,30 @@ body {
 .share-input {
   flex: 1;
   border-radius: 999px;
-  border: 1px solid #c7e2b8;
+  border: 6px solid #c7e2b8;
   padding: 8px 14px;
-  font-size: 0.9rem;
+  font-size: 1.5rem;
 }
 
 /* simple fake post */
 .fake-post {
-  border-top: 1px solid #eee;
-  padding-top: 15px;
-  margin-top: 10px;
+  border-top: 15px solid #8fd06e;
+  padding-top: 35px;
+  margin-top: 30px;
 }
 
 /* right: announcements */
 .feed-right {
-  background: #e0f0cf;
+  background: #a4f074;
   border-radius: 12px;
   padding: 18px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+  border: 6px solid #c6ecab;
 }
 
+
 .feed-right h2 {
-  font-size: 1.3rem;
+  font-size: 3rem;
   margin-bottom: 10px;
   text-decoration: underline;
 }
@@ -331,15 +335,22 @@ body {
   border-radius: 10px;
   padding: 10px;
   margin-bottom: 10px;
-  font-size: 0.9rem;
+  font-size: 1.5rem;
 }
 
 /* ========= CAREER CENTER ========= */
 
+/* Top image banner */
 .career-hero {
-  background: #ffffff;
+  width: 100%;
+  height: 180px; /* adjust if you want taller/shorter */
+  background-image: url("../Images/Careercenter.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 0 0 12px 12px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  position: relative;        /* needed for title overlay */
   overflow: hidden;
 }
 
@@ -351,13 +362,20 @@ body {
   padding: 14px 24px;
 }
 
+/* Title box on top of image */
 .career-banner-title {
+  position: absolute;
+  left: 24px;
+  bottom: 14px;
   background: rgba(255,255,255,0.9);
   padding: 6px 10px;
   border-radius: 6px;
   font-weight: 700;
+  font-size: 14px;
 }
 
+
+/* Tabs under banner stay the same */
 .career-tabs {
   display: flex;
   gap: 16px;
@@ -442,7 +460,10 @@ body {
   }
 }
 
+
+
 /* Home Feature Tiles */
+
 .home-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -478,3 +499,62 @@ body {
 }
 
 
+.post-form {
+  margin-bottom: 12px;
+}
+
+.post-form-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.upload-label {
+  font-size: 0.85rem;
+  color: #555;
+  cursor: pointer;
+}
+
+.upload-label input {
+  display: none;
+}
+
+.post-meta {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.post-title {
+  margin: 6px 0;
+}
+
+.post-text {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.post-image {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 4px;
+}
+.feed-left,
+.feed-right {
+  min-height: 75vh; /* makes both tall like Home tiles */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.feed-photo-container {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.feed-photo {
+  width: 55%;
+  border-radius: 12px;
+  object-fit: cover;
+  max-height: 900px; /* adjust if needed */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
